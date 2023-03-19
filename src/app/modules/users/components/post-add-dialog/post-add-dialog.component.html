@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Add post</h2>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput [formControl]="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 400px; height: 300px;">
+        <mat-label>Description</mat-label>
+        <textarea matInput [formControl]="body" [rows]="8"></textarea>
+    </mat-form-field>
+    
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="add()"[disabled]="!Form.valid">Add</button>
+    <button mat-raised-button mat-dialog-close="flase" color="warn">Cancel</button>
+</div>

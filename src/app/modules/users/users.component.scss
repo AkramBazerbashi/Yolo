@@ -1,0 +1,20 @@
+app-navbar{
+    width: 23%;
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #cac7c7;
+}
+
+app-posts-list{
+    width: 70%;
+}
+
+app-posts-list{
+    padding: 40px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}

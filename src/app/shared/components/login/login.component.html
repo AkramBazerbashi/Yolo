@@ -1,0 +1,37 @@
+<div class="con" style="margin-inline: auto;">
+   
+     <span class="span1" style="display: block; margin-inline: auto; margin-bottom: 20px; font-size: 20px; font-weight: 700;" >تسجيل الدخول</span>
+ 
+     <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Full name</mat-label>
+      <input matInput [formControl]="username" /> 
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [formControl]="password" [type]="hide ? 'password' : 'text'"/>
+      <button mat-icon-button matSuffix color="primary" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
+  
+    <button class="btn1"  mat-raised-button (click)="login()">
+      <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      Login
+    </button>
+
+    <span>not a user?</span>
+    <button class="btn1"  mat-raised-button (click)="sign_up()">
+        <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Sign Up
+      </button>
+  </div>

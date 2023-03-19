@@ -1,0 +1,5 @@
+<div class="container">
+    <app-navbar (selectedUser)="onUserSelect($event)"></app-navbar>
+
+    <app-posts-list [selectedUserId]="selectedUserId" ></app-posts-list>
+</div>

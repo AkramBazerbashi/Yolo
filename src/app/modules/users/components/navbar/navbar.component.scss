@@ -1,0 +1,70 @@
+.mat-row:nth-child(even){
+    background-color: white;
+}
+.mat-row:nth-child(odd){
+    background-color: #F2F2F2;
+}
+
+td{
+    background-color: red;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 10px solid #cac7c7;
+    padding: 10px;
+    color: white;
+}
+
+th{
+    color: black;
+}
+
+.active{
+    background-color: green !important;
+}
+
+button{
+    margin-right: 10px;
+}
+
+.con{
+    padding: 20px;
+}
+
+table{
+    background-color: #cac7c7;
+}
+
+.actions{
+    button{
+        width: 32px;
+        height: 32px;
+    }
+
+    mat-icon{
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.red{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.green{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}

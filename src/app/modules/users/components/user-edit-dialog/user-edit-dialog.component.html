@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>{{data?.id! > 0?"Edit user":"Add user"}}</h2>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput [formControl]="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select [formControl]="gender">
+            <mat-option [value]="'female'">Female</mat-option>
+            <mat-option [value]="'male'">Male</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select [formControl]="status">
+            <mat-option [value]="'active'">Active</mat-option>
+            <mat-option [value]="'inactive'">Inactive</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="do()"[disabled]="!Form.valid">{{data?.id! > 0 ?"Edit":"Add"}}</button>
+    <button mat-raised-button mat-dialog-close="flase" color="warn">Cancel</button>
+</div>

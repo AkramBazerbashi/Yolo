@@ -1,0 +1,49 @@
+<div class="con">
+    <button mat-raised-button color="primary" (click)="addUser()" style="margin-bottom: 10px;">
+        <mat-icon>add</mat-icon>
+        Add a user
+    </button>
+    <mat-form-field id="search" class="search" appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <div>
+        <span class="green"></span>
+        <span>Active</span>
+    </div>
+    <div>
+        <span class="red"></span>
+        <span>Inactive</span>
+    </div>
+    
+    <table mat-table [dataSource]="dataSource" matSort class="orders">
+    
+        <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Users List: <small>Click on a user to show the posts</small></th>
+            <td mat-cell *matCellDef="let element" [class]="{active: element.status == 'active'? true: false}" (click)="onUserSelect(element)">
+                <div class="up" style="display: flex; justify-content: space-between; margin-bottom: 10px;" >
+                    <span>{{element.name}}</span>
+                    <span>{{element.id}}</span>
+                </div>
+                <div class="down" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span>{{element.email}}</span>
+                    <mat-icon>{{element.gender == "female"? "female":"male"}}</mat-icon>
+                </div>
+                <div class="actions">
+                    <button mat-fab color="primary" (click)="editUser(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-fab color="warn" (click)="deleteUser(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">There is no matching data to search for  "{{input.value}}"</td>
+        </tr>
+    </table>
+</div>

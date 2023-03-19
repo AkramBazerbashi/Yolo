@@ -1,0 +1,11 @@
+<h2>User's Posts</h2>
+
+<div *ngIf="selectedUserId > 0">
+    <button mat-raised-button color="primary" (click)="addPost()" style="margin-block: 10px;">
+        <mat-icon>add</mat-icon>
+        Add a post
+    </button>
+    <div *ngFor="let post of userPosts" style="margin-bottom: 10px;">
+        <app-post [post]="post" (onPostDelete)="onPostDelete($event)"></app-post>
+    </div>
+</div>

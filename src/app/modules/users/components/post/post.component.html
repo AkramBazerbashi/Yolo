@@ -1,0 +1,27 @@
+<div class="postCon">
+    <div style="display: flex; justify-content: space-between;">
+        <h4>{{post?.title}}</h4>
+        <button mat-fab color="warn" (click)="deletePost()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    <span style="word-wrap: break-word;">{{post?.body}}</span>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+            <mat-panel-description>
+                {{comments.length}} Comments
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let comment of comments" style="background-color: blue; padding: 5px; border-radius: 5px; color: white;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; width: 500px;">
+                    <span>{{comment?.name}}</span>
+                    <span>{{comment?.email}}</span>
+                </div>
+                <div>
+                    <span style="word-wrap: break-word;">{{comment?.body}}</span>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
